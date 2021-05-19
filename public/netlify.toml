@@ -1,0 +1,5 @@
+[[redirects]]
+from = "/loginOrRegister"
+to = "/dashboard"
+status = 200
+force = true
