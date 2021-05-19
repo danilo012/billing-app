@@ -56,7 +56,7 @@ const LoginForm = (props) => {
         <Grid container justify='center'>
             <Box display='block' width={320}>
                 <Typography variant='h6'>Enter your credentials to login</Typography>
-                <form name='login' netlify data-netlify={true} noValidate autoComplete='off' onSubmit={handleSubmit}>
+                <form noValidate autoComplete='off' onSubmit={handleSubmit}>
                     <TextField 
                         variant='outlined'
                         margin='dense'
