@@ -30,6 +30,9 @@ export const asyncLogin = (data, history, notify) => {
                     notify(notifyError)
                 }
             })
-            .catch(err => alert(`${err.message}-${err.status}`))
+            .catch(err => {
+                console.log(err)
+                alert(`${err.message}-${err.statusCode}`)
+            })
     }
 }
