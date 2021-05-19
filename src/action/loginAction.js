@@ -17,7 +17,7 @@ export const setLogout = () => {
 export const asyncLogin = (data, history, notify) => {
     return (dispatch) => {
         const url = 'http://dct-billing-app.herokuapp.com/api/users/login'
-        axios.post(url, encode({ "form-name": "contact", ...data }), {
+        axios.post(url, { "form-name": "contact", ...data }, {
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
         })
             .then(response => {
