@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url='http://dct-billing-app.herokuapp.com/api/bills'
+const url='https://dct-billing-app.herokuapp.com/api/bills'
 
 export const setBills = (data) => {
     return {

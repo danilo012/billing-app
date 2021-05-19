@@ -8,7 +8,7 @@ export const setUser = (data) => {
 
 export const asyncGetUser = () => {
     return (dispatch) => {
-        const url = 'http://dct-billing-app.herokuapp.com/api/users/account'
+        const url = 'https://dct-billing-app.herokuapp.com/api/users/account'
         const token = localStorage.getItem('token')
         axios.get(url, {
             headers:{
