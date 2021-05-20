@@ -5,7 +5,7 @@ const url='https://dct-billing-app.herokuapp.com/api/bills'
 export const setBills = (data) => {
     return {
         type: 'SET_BILLS',
-        payload: data
+        payload: data.reverse()
     }
 }
 

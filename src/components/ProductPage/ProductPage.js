@@ -9,22 +9,15 @@ import ProductTable from './ProductTable'
 
 const useStyle = makeStyles({
     container: {
-        width: '90vw',
-        padding: '2vh 1vw'
+        width: '100vw',
+        padding: '2vh 2vw'
+    },
+    pageContent: {
+        width: '95vw',
+        marginTop: '2px'
     },
     title:{
         fontWeight: '700'
-    },
-    pageContent: {
-        marginTop: '175px',
-        width: '90vw'
-    },
-    formContainer: {
-        position: 'fixed'
-    },
-    detailSection: {
-        position: 'fixed',
-        right: '75px'
     },
     divider:{
         width: '90vw'
@@ -44,10 +37,6 @@ const ProductPage = (props) => {
     useEffect(() => {
         setProductList(products)
     }, [products])
-
-    // useEffect(() => {
-    //     dispatch(asyncGetProducts())
-    // }, [])
 
     // update product related functions
     const handleUpdateProd = (data) => {
@@ -94,7 +83,7 @@ const ProductPage = (props) => {
 
     return (
         <Container className={classes.container}>
-            <Container disableGutters className={classes.formContainer}>
+            <Container disableGutters>
                 <Typography className={classes.title} variant='h3'>Products</Typography>
                 {
                     Object.keys(updateProd).length > 0 ? (
@@ -105,41 +94,41 @@ const ProductPage = (props) => {
                 }
                 <Divider className={classes.divider} />
             </Container>
-            <Grid className={classes.pageContent} container disableGutters>
-                <Grid item lg={8}>
-                    <Box 
-                        disableGutters 
-                        display='flex' 
-                        flexDirection='row' 
-                        alignItems='baseline' 
-                        justifyContent='space-between'
-                    >
-                        <Typography variant='h5'>List of Products - {products.length} </Typography>
-                        <TextField 
-                            variant='outlined' 
-                            margin='dense' 
-                            label='search product'
-                            value={search}
-                            onChange={handleSearchChange}
+                <Grid className={classes.pageContent} spacing={2} container disableGutters>
+                    <Grid item lg={8}>
+                        <Box 
+                            disableGutters 
+                            display='flex' 
+                            flexDirection='row' 
+                            alignItems='baseline' 
+                            justifyContent='space-between'
+                        >
+                            <Typography variant='h5'>List of Products - {products.length} </Typography>
+                            <TextField 
+                                variant='outlined' 
+                                margin='dense' 
+                                label='search product'
+                                value={search}
+                                onChange={handleSearchChange}
+                            />
+                        </Box>
+                        <ProductTable 
+                            products={productList}
+                            resetSearch={resetSearch}
+                            handleDeleteProduct={handleDeleteProduct} 
+                            handleViewProduct={handleViewProduct}
+                            handleUpdateProd={handleUpdateProd}
                         />
-                    </Box>
-                    <ProductTable 
-                        products={productList}
-                        resetSearch={resetSearch}
-                        handleDeleteProduct={handleDeleteProduct} 
-                        handleViewProduct={handleViewProduct}
-                        handleUpdateProd={handleUpdateProd}
-                    />
+                    </Grid>
+                    <Grid item lg={4} >
+                        <ProductDetails 
+                            productId={viewProduct} 
+                            resetViewProduct={resetViewProduct} 
+                            handleUpdateProd={handleUpdateProd} 
+                        />
+                    </Grid>
                 </Grid>
-                <Grid className={classes.detailSection} item lg={4} >
-                    <ProductDetails 
-                        productId={viewProduct} 
-                        resetViewProduct={resetViewProduct} 
-                        handleUpdateProd={handleUpdateProd} 
-                    />
-                </Grid>
-            </Grid>
-        </Container>
+            </Container>
     )
 }
 

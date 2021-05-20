@@ -9,8 +9,11 @@ const useStyle = makeStyles({
         fontWeight: '700'
     },
     container: {
-        width: '90vw',
-        padding: '2vh 1vw'
+        width: '100vw',
+        padding: '2vh 2vw',
+        display: 'flex',
+        flexDirection : 'row',
+        justifyContent: 'center'
     },
     titleContainer:{
         width: '100%'
@@ -19,13 +22,10 @@ const useStyle = makeStyles({
         width: '35%'
     },
     summarySection:{
-        position: 'fixed',
-        right: '50px',
-        width: '330px',
-        top: '60px'
+        marginTop: '60px'
     },
     billTableSection: {
-        position: 'fixed',
+        // position: 'fixed',
         width: '67vw'
     }
 })
@@ -57,7 +57,7 @@ const BillsPage = (props) => {
     return (
         <Container className={classes.container}>
             <Grid container spacing={2}>
-                <Grid className={classes.billTableSection} item lg={9}>
+                <Grid className={classes.billTableSection} item lg={9} md={9} sm={12} xs={12}>
                     <Box 
                         disableGutters
                         display='flex'
@@ -81,7 +81,7 @@ const BillsPage = (props) => {
                     </Box>
                     { bills.length > 0 && <BillsTable bills={allBills} resetSearch={resetSearch} /> }
                 </Grid>
-                <Grid className={classes.summarySection} item lg={3}>
+                <Grid className={classes.summarySection} item lg={3} md={3} sm={3} xs={3}>
                     <SummarySection />        
                 </Grid>
             </Grid>

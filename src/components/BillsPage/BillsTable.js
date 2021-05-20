@@ -47,7 +47,7 @@ const BillsTable = (props) => {
                     {
                         bills.map((bill, index) => {
                             return (
-                                <TableRow key={bill._id}>
+                                <TableRow hover key={bill._id}>
                                     <TableCell align='center'> {index + 1} </TableCell>
                                     <TableCell> {bill._id} </TableCell>
                                     <TableCell> {getCustomerName(bill.customer)} </TableCell>

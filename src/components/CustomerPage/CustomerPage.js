@@ -8,14 +8,14 @@ import CustomerTable from './CustomerTable'
 
 const useStyle = makeStyles({
     container: {
-        width: '90vw',
-        padding: '2vh 1vw'
+        width: '100vw',
+        padding: '2vh 2vw',
+        display: 'flex',
+        flexDirection : 'row',
+        justifyContent: 'center'
     },
     title:{
         fontWeight: '700'
-    },
-    formContainer:{
-        position: 'fixed'
     },
     tableContainer:{
         position: 'fixed',
@@ -79,7 +79,7 @@ const CustomerPage = (props) => {
 
     return (
         <Container className={classes.container} >
-            <Container disableGutters className={classes.formContainer}>
+            <Container disableGutters>
                 <Typography className={classes.title} variant='h3'>Customers</Typography>
                 {
                     Object.keys(updateCust).length > 0 ? (

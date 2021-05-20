@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Drawer as MUIDrawer, List, ListItem, ListItemIcon, ListItemText, makeStyles } from '@material-ui/core'
+import { Box, Drawer as MUIDrawer, List, ListItem, ListItemIcon, ListItemText, makeStyles } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 import PeopleIcon from '@material-ui/icons/People'
@@ -95,42 +95,47 @@ const Drawer = (props) => {
         <MUIDrawer 
             variant='permanent'
         >
+
             <List>
-                <ListItem className={classes.menuItem} button onClick={open ? handleDrawerClose : handleDrawerOpen}>
-                    <ListItemIcon className={classes.menuIcon}>
-                        <MenuIcon fontSize='large'/>
-                    </ListItemIcon>
-                    {
-                        open && <ListItemText > <span className={classes.menuText}>Menu</span> </ListItemText>
-                    }
-                </ListItem>
-                {
-                    menuItems.map((menu, i) => {
-                        const { name, icon, link } = menu
-                        return (
-                            <Link key={i} to={link} className={classes.menuLink}>
-                                <ListItem onClick={open ? handleDrawerClose : null} className={classes.menuItem} button>
-                                    <ListItemIcon className={classes.menuIcon}>
-                                        {icon}
-                                    </ListItemIcon>
-                                    {
-                                        open && <ListItemText> <span className={classes.menuText}>{name}</span> </ListItemText>
-                                    }
-                                </ListItem>
-                            </Link>
-                        )
-                    })
-                }
-                <Link to={'/loginOrRegister'} className={classes.menuLink}>
-                    <ListItem className={`${classes.menuItem} ${classes.menuLogout}`} button onClick={handleLogout}>
-                        <ListItemIcon className={classes.menuIcon}>
-                            <ExitToAppIcon />
-                        </ListItemIcon>
+                <Box display='flex' flexDirection='column' justifyContent='space-between' minHeight='95vh'>
+                    <Box>
+                        <ListItem className={classes.menuItem} button onClick={open ? handleDrawerClose : handleDrawerOpen}>
+                            <ListItemIcon className={classes.menuIcon}>
+                                <MenuIcon fontSize='large'/>
+                            </ListItemIcon>
+                            {
+                                open && <ListItemText > <span className={classes.menuText}>Menu</span> </ListItemText>
+                            }
+                        </ListItem>
                         {
-                            open && <ListItemText> <span className={classes.menuText}>Logout</span> </ListItemText>
+                            menuItems.map((menu, i) => {
+                                const { name, icon, link } = menu
+                                return (
+                                    <Link key={i} to={link} className={classes.menuLink}>
+                                        <ListItem onClick={open ? handleDrawerClose : null} className={classes.menuItem} button>
+                                            <ListItemIcon className={classes.menuIcon}>
+                                                {icon}
+                                            </ListItemIcon>
+                                            {
+                                                open && <ListItemText> <span className={classes.menuText}>{name}</span> </ListItemText>
+                                            }
+                                        </ListItem>
+                                    </Link>
+                                )
+                            })
                         }
-                    </ListItem>
-                </Link>
+                    </Box>
+                    <Link to={'/loginOrRegister'} className={classes.menuLink}>
+                        <ListItem className={`${classes.menuItem} ${classes.menuLogout}`} button onClick={handleLogout}>
+                            <ListItemIcon className={classes.menuIcon}>
+                                <ExitToAppIcon />
+                            </ListItemIcon>
+                            {
+                                open && <ListItemText> <span className={classes.menuText}>Logout</span> </ListItemText>
+                            }
+                        </ListItem>
+                    </Link>
+                </Box>
             </List>
         </MUIDrawer>
     )

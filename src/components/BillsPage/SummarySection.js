@@ -46,14 +46,17 @@ const SummarySection = (props) => {
             flexDirection='column'
             justifyContent='space-between'
         >
-            <Paper className={classes.summaryContainer}>
-                <Typography className={classes.summaryTitle} variant='h5'>Summary</Typography>
-                <Divider variant='middle' />
-                <Box className={classes.summaryContent} display='block'>
-                    <Typography variant='h6'>Total orders: {bills.length}</Typography>
-                    <Typography variant='h6'>Total Amount: {calculateTotal(bills)}</Typography>
-                </Box>
-            </Paper>
+            <Box>
+                <Paper className={classes.summaryContainer}>
+                    <Typography className={classes.summaryTitle} variant='h5'>Summary</Typography>
+                    <Divider variant='middle' />
+                    <Box className={classes.summaryContent} display='block'>
+                        <Typography variant='h6'>Total orders: {bills.length}</Typography>
+                        <Typography variant='h6'>Total Amount: {calculateTotal(bills)}</Typography>
+                    </Box>
+                </Paper>
+            </Box>
+            
                 <Link to='/addBill'>
                     <Tooltip title='Add New Bill'>
                         <Fab className={classes.addIcon} color='primary'>

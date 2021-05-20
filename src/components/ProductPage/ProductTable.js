@@ -3,9 +3,6 @@ import React from 'react'
 
 const useStyle = makeStyles({
     table: {
-        position: 'fixed', 
-        width: '60%',
-        marginTop: '5px',
         maxHeight: '380px'
     },
     nameHeader: {
