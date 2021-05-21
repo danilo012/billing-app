@@ -64,7 +64,7 @@ export const asyncGetCustomers = () => {
     }
 }
 
-export const asyncAddCustomer = (data, reset) => {
+export const asyncAddCustomer = (data, reset, closeModal) => {
     return (dispatch) => {
         const token = localStorage.getItem('token')
         const config = {
@@ -77,6 +77,9 @@ export const asyncAddCustomer = (data, reset) => {
                 const data = response.data
                 dispatch(addCustomer(data))
                 reset()
+                if(closeModal) {
+                    closeModal()
+                }
             })
             .catch(err => alert(err.message))
     }

@@ -35,7 +35,7 @@ const SummaryOfBill = (props) => {
     }
 
     return (
-        <Paper className={classes.summaryContainer}>
+        <Paper elevation={3} className={classes.summaryContainer}>
             <Typography className={classes.title} variant='h5'>Summary of bill</Typography>
             <Divider />
             <Container>

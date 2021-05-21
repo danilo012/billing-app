@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { makeStyles, Container, Typography, Grid } from '@material-ui/core'
+import { makeStyles, Container, Typography, Box, Grid } from '@material-ui/core'
 import ProductSuggestion from './ProductSuggestion'
 import ProductListTable from './ProductListTable'
 import SummaryOfBill from './SummaryOfBill'
+import AddCustomerModal from './AddCustomerModal'
 
 const useStyle = makeStyles({
     title:{
@@ -68,14 +69,17 @@ const AddBill = (props) => {
 
     return (
         <Container className={classes.container}>
-            <Typography 
-                className={classes.title} 
-                variant='h3'
-            >
-                New Bill
-            </Typography>
+            <Box display='flex' flexDirection='row' justifyContent='space-between'>
+                <Typography 
+                    className={classes.title} 
+                    variant='h3'
+                >
+                    New Bill
+                </Typography>
+                <AddCustomerModal />
+            </Box>
             <Grid className={classes.gridContainer} container spacing={2}>
-                <Grid item lg={9}>
+                <Grid item lg={9} md={9} sm={12}>
                     <ProductSuggestion handleAddLineItem={handleAddLineItem} />
                     <ProductListTable 
                         items={lineItems} 
@@ -83,7 +87,7 @@ const AddBill = (props) => {
                         handleRemoveLineItem={handleRemoveLineItem}
                     />
                 </Grid>
-                <Grid item lg={3}>
+                <Grid item lg={3} md={3} sm={12}>
                     <SummaryOfBill 
                         handleCustomerInfo={handleCustomerInfo} 
                         lineItems={lineItems} 
