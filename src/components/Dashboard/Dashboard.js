@@ -6,7 +6,8 @@ import StatsChart from './StatsChart'
 const useStyle = makeStyles({
     container: {
         width: '90vw',
-        padding: '2vh 1vw'
+        padding: '2vh 1vw',
+        marginLeft: '60px'
     },
     title:{
         fontWeight: '700'

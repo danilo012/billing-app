@@ -10,7 +10,7 @@ const AppBar = (props) => {
                 <ul>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/faq'>FAQ's</Link></li>
-                    <li><Link to='/loginOrRegister'>Login/Register</Link></li>
+                    <li><Link to='/login-or-register'>Login/Register</Link></li>
                 </ul>
             </div>
         </div>

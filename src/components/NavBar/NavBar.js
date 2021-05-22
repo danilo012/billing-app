@@ -38,7 +38,7 @@ const NavBar = (props) => {
 
             <Route path='/' component={HomePage} exact={true} />
             <Route path='/faq' />
-            <Route path='/loginOrRegister' component={LoginRegisterPage} />
+            <Route path='/login-or-register' component={LoginRegisterPage} />
             <Route path='/user' component={UserPage} />
             <Route path='/customers' component={CustomerPage} exact={true} />
             <Route path='/products' component={ProductPage} />

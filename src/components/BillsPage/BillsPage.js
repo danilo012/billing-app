@@ -11,6 +11,7 @@ const useStyle = makeStyles({
     container: {
         width: '100vw',
         padding: '2vh 2vw',
+        marginLeft: '50px',
         display: 'flex',
         flexDirection : 'row',
         justifyContent: 'center'

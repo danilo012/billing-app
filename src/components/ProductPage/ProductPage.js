@@ -10,7 +10,8 @@ import ProductTable from './ProductTable'
 const useStyle = makeStyles({
     container: {
         width: '100vw',
-        padding: '2vh 2vw'
+        padding: '2vh 2vw',
+        marginLeft: '50px'
     },
     pageContent: {
         width: '95vw',

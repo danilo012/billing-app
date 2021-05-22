@@ -97,7 +97,7 @@ const Drawer = (props) => {
         >
 
             <List>
-                <Box display='flex' flexDirection='column' justifyContent='space-between' minHeight='95vh'>
+                <Box display='flex' flexDirection='column' justifyContent='space-between' minHeight='90vh'>
                     <Box>
                         <ListItem className={classes.menuItem} button onClick={open ? handleDrawerClose : handleDrawerOpen}>
                             <ListItemIcon className={classes.menuIcon}>
@@ -125,7 +125,7 @@ const Drawer = (props) => {
                             })
                         }
                     </Box>
-                    <Link to={'/loginOrRegister'} className={classes.menuLink}>
+                    <Link to={'/login-or-register'} className={classes.menuLink}>
                         <ListItem className={`${classes.menuItem} ${classes.menuLogout}`} button onClick={handleLogout}>
                             <ListItemIcon className={classes.menuIcon}>
                                 <ExitToAppIcon />
