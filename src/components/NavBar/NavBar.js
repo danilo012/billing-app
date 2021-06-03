@@ -14,6 +14,7 @@ import AddBill from '../BillsPage/Generate New Bill/AddBill'
 import ViewCustomer from '../CustomerPage/View Customer/ViewCustomer'
 import BillView from '../BillsPage/View Bill/BillView'
 import Dashboard from '../Dashboard/Dashboard'
+import PrivateRoute from './PrivateRoute'
 
 const NavBar = (props) => {
     const isLoggedIn = useSelector(state => state.login)
@@ -22,7 +23,7 @@ const NavBar = (props) => {
     useEffect(() => {
         if(localStorage.getItem('token')){
             dispatch(setLogin())
-            props.history.push('/dashboard')
+            // props.history.push('/dashboard')
         }
     }, [dispatch, props.history, isLoggedIn])
 
@@ -39,14 +40,15 @@ const NavBar = (props) => {
             <Route path='/' component={HomePage} exact={true} />
             <Route path='/faq' />
             <Route path='/login-or-register' component={LoginRegisterPage} />
-            <Route path='/user' component={UserPage} />
-            <Route path='/customers' component={CustomerPage} exact={true} />
-            <Route path='/products' component={ProductPage} />
-            <Route path='/bills' component={BillsPage} exact={true} />
-            <Route path='/addBill' component={AddBill} exact={true} />
-            <Route path='/customers/:id' component={ViewCustomer} exact={true} />
-            <Route path='/bills/:id' component={BillView} exact={true} />
-            <Route path='/dashboard' component={Dashboard} />
+
+            <PrivateRoute path='/user' component={UserPage} exact={true} />
+            <PrivateRoute path='/customers' component={CustomerPage} exact={true} />
+            <PrivateRoute path='/products' component={ProductPage} exact={true} />
+            <PrivateRoute path='/bills' component={BillsPage} exact={true} />
+            <PrivateRoute path='/addBill' component={AddBill} exact={true} />
+            <PrivateRoute path='/customers/:id' component={ViewCustomer} exact={true} />
+            <PrivateRoute path='/bills/:id' component={BillView} exact={true} />
+            <PrivateRoute path='/dashboard' component={Dashboard} exact={true} />
         </div>
     )
 }
