@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Point of Sale Application - Billing App
+## About
+A billing application is used to create and manage orders for a store. It helps in inventory and customer management. This application deals with four main modules namely Users, Customers, Products, and Bills. Users can view information about each module and also download bills if required.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+* Create Bills, Manage Bills, View Bills, and Print Bill in PDF format.
+* Create Customer, Update Customer, Delete Customer, and View Customer Details including all bills made under the respective customer.
+* Add Product, Update Customer, View Products, and Delete Product.
 
-## Available Scripts
+## Screenshots
+### Home Page
+![Home Page](https://user-images.githubusercontent.com/70807417/120587988-fbc12180-c453-11eb-9098-a1c69f540d2d.png)
 
-In the project directory, you can run:
+### Login and Register Page
+Users can create their account or login into account through the page shown below
+![Login Page](https://user-images.githubusercontent.com/70807417/120588262-899d0c80-c454-11eb-9c86-8a775cc8efef.png)
+![Register Page](https://user-images.githubusercontent.com/70807417/120588270-8dc92a00-c454-11eb-9df3-b3d5993ad010.png)
 
-### `npm start`
+### Dashboard
+Once the user logged in, they land to the dashboard page of the application.
+![Dashboard](https://user-images.githubusercontent.com/70807417/120588301-991c5580-c454-11eb-90c9-866fd3cbca4f.png)
+In the below image, there is a drawer on left of the page where the user can navigate between different modules of the application
+![Drawer open](https://user-images.githubusercontent.com/70807417/120588331-a5081780-c454-11eb-9086-484b4c98d7d4.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### User Detail Page
+![User Detail Page](https://user-images.githubusercontent.com/70807417/120588392-b94c1480-c454-11eb-9156-28093e59880b.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Customers Page
+Here the users can add and manage customers.
+![Customer Page](https://user-images.githubusercontent.com/70807417/120588416-c5d06d00-c454-11eb-95fd-19ffa97da327.png)
 
-### `npm test`
+### Customer Detail Page
+The user can also view customer details with all the bills generated under the respective customers
+![Customer Detail Page](https://user-images.githubusercontent.com/70807417/120588440-cff26b80-c454-11eb-802c-6bf9425b3cfe.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Product Page
+Here the users can add and manage products.
+![Product Page without View](https://user-images.githubusercontent.com/70807417/120588474-e0a2e180-c454-11eb-9a77-4f44454dcc0a.png)
 
-### `npm run build`
+### Product Page with View detail
+On click of view button of a product, its details are shown on right side of the page.
+![Product Page](https://user-images.githubusercontent.com/70807417/120588495-eb5d7680-c454-11eb-86c6-e41aa49c9bcc.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Bills Page
+All the generated bills are displayed in the bills page.
+![Bills Page](https://user-images.githubusercontent.com/70807417/120588562-07611800-c455-11eb-87b2-fd7ea413ee0f.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Add Bill page
+To generate a new bill, we will fill in the details of the customer and all the products here. Suppose you want to add a new customer, then you can click on the ADD NEW CUSTOMER button which is on top right of the page, where a modal pops up to fill in the details of the new customer and proceed with generating the bill.
+![New Bill Page](https://user-images.githubusercontent.com/70807417/120588609-19db5180-c455-11eb-96c8-f638559f46e0.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Invoice Page
+Here user can download the bill in PDF format.
+![Bill View Page](https://user-images.githubusercontent.com/70807417/120588675-36778980-c455-11eb-8b26-a338d8b20ea3.png)
 
-### `npm run eject`
+### PDF format of Bill
+![Bill in PDF](https://user-images.githubusercontent.com/70807417/120588734-51e29480-c455-11eb-898d-baf49a3c2d75.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Libraries and Utilities
+React, Redux, react-router-dom, react-redux, redux-thunk, react-google-charts, moment, axios, material UI, validator
